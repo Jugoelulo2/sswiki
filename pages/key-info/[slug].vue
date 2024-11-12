@@ -1,7 +1,11 @@
 <template>
-    <h1 class="text-center text-2xl font-bold">{{ keyInfo.title }}</h1>
-    <img :src="getImageUrl(keyInfo.image)" alt="Key Information Image" class="w-5/6 h-auto mx-auto">
-    <div v-html="keyInfo.content" class="table-auto"></div>
+    <UContainer>
+        <h1 class="text-center text-2xl font-bold">{{ keyInfo.title }}</h1>
+        <div class="flex justify-center">
+            <div v-html="keyInfo.content" class="prose w-full"></div>
+        </div>
+
+    </UContainer>
  
 
     
