@@ -9,41 +9,38 @@
         <div class="bg-gray-50 p-8 rounded-lg space-y-6">
 
           <!-- Reason for Application -->
-          <UFormField label="Reason for Application" required>
+          <UFormGroup label="Reason for Application" required>
             <UTextarea
               :rows="1"
               v-model="reasonForApplication"
               placeholder="Enter the reason for application"
-              class="w-full p-2"
             />
-          </UFormField>
+          </UFormGroup>
 
           <!-- Desired Outcome -->
-          <UFormField label="Desired Outcome" required>
+          <UFormGroup label="Desired Outcome" required>
             <UTextarea
               :rows="1"
               v-model="desiredOutcome"
               placeholder="Enter the desired outcome"
-              class="w-full p-2"
             />
-          </UFormField>
+          </UFormGroup>
 
           <!-- Investigation Notes -->
-          <UFormField label="Investigation" required>
+          <UFormGroup label="Investigation" required>
             <UTextarea
               :rows="1"
               v-model="investigation"
               placeholder="Enter investigation notes"
-              class="w-full p-2"
             />
-          </UFormField>
+          </UFormGroup>
 
           <!-- Supporting Documentation -->
-          <UFormField
+          <UFormGroup
             label="Supporting Documentation"
             description="Add documentation that has been provided"
           >
-            <div class="space-y-4 p-2">
+            <div class="space-y-4">
               <!-- Input with Add button -->
               <div class="flex gap-2">
                 <UInput
@@ -86,17 +83,16 @@
                 </li>
               </ul>
             </div>
-          </UFormField>
+          </UFormGroup>
 
           <!-- Recommendation -->
-          <UFormField label="Recommendation" required>
+          <UFormGroup label="Recommendation" required>
             <UInput
               v-model="recommendation"
               type="textarea"
               placeholder="Enter recommendation"
-              class="w-full p-2"
             />
-          </UFormField>
+          </UFormGroup>
         </div>
         <div class="flex gap-4">
           <UTextarea class="flex-grow" v-model="formattedOutput" />
@@ -116,6 +112,7 @@ const recommendation = ref("");
 const newDocument = ref("");
 const documents = ref([]);
 const editingIndex = ref(-1);
+const isOpen = ref(false);
 
 const addDocument = () => {
   if (newDocument.value.trim()) {
