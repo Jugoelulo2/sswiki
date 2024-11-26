@@ -11,6 +11,7 @@
           <!-- Reason for Application -->
           <UFormGroup label="Reason for Application" required>
             <UTextarea
+              autoresize
               :rows="1"
               v-model="reasonForApplication"
               placeholder="Enter the reason for application"
@@ -20,6 +21,7 @@
           <!-- Desired Outcome -->
           <UFormGroup label="Desired Outcome" required>
             <UTextarea
+              autoresize
               :rows="1"
               v-model="desiredOutcome"
               placeholder="Enter the desired outcome"
@@ -29,6 +31,7 @@
           <!-- Investigation Notes -->
           <UFormGroup label="Investigation" required>
             <UTextarea
+              autoresize
               :rows="1"
               v-model="investigation"
               placeholder="Enter investigation notes"
@@ -87,9 +90,10 @@
 
           <!-- Recommendation -->
           <UFormGroup label="Recommendation" required>
-            <UInput
+            <UTextarea
+              autoresize
+              :rows="1"
               v-model="recommendation"
-              type="textarea"
               placeholder="Enter recommendation"
             />
           </UFormGroup>
