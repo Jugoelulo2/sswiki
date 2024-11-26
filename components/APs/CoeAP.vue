@@ -11,7 +11,6 @@
         <h1 class="text-2xl font-bold">AP Notes</h1>
       </template>
 
-      <UForm>
         <!-- Reason for CoE Change -->
         <UFormField label="Reason for CoE Change" required>
           <UInput
@@ -19,7 +18,7 @@
             placeholder="Enter the reason for CoE change"
             type="text"
           />
-        </UFormField>
+        </UFormGroup>
 
         <!-- Subjects & Trimesters -->
         <div class="grid grid-cols-2 gap-4">
