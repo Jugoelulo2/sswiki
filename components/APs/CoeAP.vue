@@ -10,39 +10,39 @@
       <template #header>
         <h1 class="text-2xl font-bold">AP Notes</h1>
       </template>
+      <div class="space-y-6 flex flex-col">
+        <div class="space-y-6 flex flex-col">
 
-        <!-- Reason for CoE Change -->
-        <UFormField label="Reason for CoE Change" required>
-          <UInput
-            v-model="reason"
-            placeholder="Enter the reason for CoE change"
-            type="text"
-          />
-        </UFormGroup>
+          <!-- Reason for CoE Change -->
+          <UFormGroup label="Reason for CoE Change" required>
+            <UTextarea
+              autoresize
+              :rows="2"
+              v-model="reason"
+              placeholder="Enter the reason for CoE change"
+            />
+          </UFormGroup>
 
         <!-- Subjects & Trimesters -->
         <div class="grid grid-cols-2 gap-4">
-          <UFormField label="Number of subjects left to complete" required>
+          <UFormGroup label="Number of subjects left to complete" required>
             <UInput v-model="subjectsLeft" type="number" min="0" />
-          </UFormField>
+          </UFormGroup>
 
-          <UFormField
-            label="Number of trimesters left to complete course"
-            required
-          >
+          <UFormGroup label="Number of trimesters left to complete course" required>
             <UInput v-model="trimestersLeft" type="number" min="0" />
-          </UFormField>
+          </UFormGroup>
         </div>
 
         <!-- Dates -->
         <div class="grid grid-cols-2 gap-4">
-          <UFormField label="Date current CoE expires" required>
+          <UFormGroup label="Date current CoE expires" required>
             <UInput v-model="currentCoeExpiry" type="date" />
-          </UFormField>
+          </UFormGroup>
 
-          <UFormField label="New course finish date" required>
+          <UFormGroup label="New course finish date" required>
             <UInput v-model="newFinishDate" type="date" />
-          </UFormField>
+          </UFormGroup>
         </div>
 
         <!-- Supporting Documentation -->
@@ -66,10 +66,11 @@
             />
           </div>
         </UFormField>
-      </UForm>
+        </div>
       <div class="flex flex-col gap-4">
         <UTextarea v-model="formattedOutput" />
         <UButton class="self-end" @click="handleCopy">Copy</UButton>
+        </div>
       </div>
     </UCard>
   </UModal>
@@ -86,10 +87,11 @@ const trimestersLeft = ref(null);
 const currentCoeExpiry = ref("");
 const newFinishDate = ref("");
 const docs = ref({
-  passport: false,
-  coeForm: false,
-  additional: false,
-  mapping: false,
+  Passport: false,
+  Visa: false,
+  Form: false,
+  Statement: false,
+  Mapping: false,
 });
 
 const formattedOutput = computed(() => {
