@@ -23,6 +23,8 @@
                     <LoaAP v-if="process.ap_note === 'loa'" class="w-full sm:w-auto"/>
                     <CtAP v-if="process.ap_note === 'ct'" class="w-full sm:w-auto"/>
                     <FCAP v-if="process.ap_note === 'fc'" class="w-full sm:w-auto"/>
+                    <ScAP v-if="process.ap_note === 'sc'" class="w-full sm:w-auto"/>
+                    <AcAP v-if="process.ap_note === 'ac'" class="w-full sm:w-auto"/>
                 </div>
 
                 <!-- Policy Button -->
@@ -42,6 +44,8 @@ import CoeAP from '~/components/APs/CoeAP.vue';
 import CtAP from '~/components/APs/CtAP.vue';
 import FCAP from '~/components/APs/FCAP.vue';
 import LoaAP from '~/components/APs/LoaAP.vue';
+import ScAP from '~/components/APs/ScAP.vue';
+import AcAP from '~/components/APs/AcAP.vue';
 
 const route = useRoute()
 const slug = route.params.slug
