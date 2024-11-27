@@ -50,13 +50,22 @@
           <div class="space-y-3">
             <UCheckbox
               v-model="docs.passport"
-              label="Copy of Passport & Visa"
+              label="Copy of Passport"
               required
             />
-            <UCheckbox v-model="docs.coeForm" label="CoE Form" required />
             <UCheckbox
-              v-model="docs.additional"
-              label="Additional Supporting Documentation & Student Statement"
+              v-model="docs.visa"
+              label="Copy of Visa"
+              required
+            />
+            <UCheckbox 
+              v-model="docs.coeForm" 
+              label="CoE Form" 
+              required 
+            />
+            <UCheckbox
+              v-model="docs.statement"
+              label="Student Statement"
               required
             />
             <UCheckbox
@@ -68,7 +77,7 @@
         </UFormField>
         </div>
       <div class="flex flex-col gap-4">
-        <UTextarea v-model="formattedOutput" />
+        <UTextarea v-model="formattedOutput" rows="10" />
         <UButton class="self-end" @click="handleCopy">Copy</UButton>
         </div>
       </div>
@@ -87,18 +96,27 @@ const trimestersLeft = ref(null);
 const currentCoeExpiry = ref("");
 const newFinishDate = ref("");
 const docs = ref({
-  Passport: false,
-  Visa: false,
-  Form: false,
-  Statement: false,
-  Mapping: false,
+  passport: false,
+  visa: false,
+  coeForm: false,
+  statement: false,
+  mapping: false,
 });
 
 const formattedOutput = computed(() => {
   const formatDate = (date) =>
     date ? new Date(date).toLocaleDateString() : "Not specified";
+  
+  const docLabels = {
+    passport: 'Passport',
+    visa: 'Visa',
+    coeForm: 'CoE Form',
+    statement: 'Personal Statement',
+    mapping: 'Mapping'
+  };
+
   const formatDocs = Object.entries(docs.value)
-    .map(([key, value]) => `- ${key}: ${value ? "✓" : "✗"}`)
+    .map(([key, value]) => `- ${docLabels[key]}: ${value ? "✓" : "✗"}`)
     .join("\n");
 
   return `Reason for CoE Change:
