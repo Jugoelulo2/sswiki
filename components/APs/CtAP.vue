@@ -12,21 +12,22 @@
         </template>
         <div class="space-y-6 flex flex-col">       
 
-          <!-- Date application submitted -->
-          <UFormGroup label="Date application submitted">
-            <UInput v-model="formState.dateSubmitted" type="date" />
-          </UFormGroup>
+          <!-- Date application submitted & Student Status -->
+          <div class="grid grid-cols-2 gap-4">
+            <UFormGroup label="Date application submitted">
+              <UInput v-model="formState.dateSubmitted" type="date" />
+            </UFormGroup>
 
-          <!-- Student Status -->
-          <UFormGroup label="Student Status">
-            <USelect
-              v-model="formState.studentStatus"
+            <UFormGroup label="Student Status">
+              <USelect
+                v-model="formState.studentStatus"
               :options="['New Student', 'Continuing Student']"
-            />
-          </UFormGroup>
+              />
+            </UFormGroup>
+          </div>
 
-          <!-- Has the student applied for course credit? -->
-          <UFormGroup label="Has the student applied for course credit?">
+          <!-- Has the student applied for specific course credit? -->
+          <UFormGroup label="Has the student applied for specific course credit?">
             <USelect
               v-model="formState.hasAppliedCredit"
               :options="['Yes', 'No']"
@@ -39,6 +40,8 @@
             v-if="formState.hasAppliedCredit === 'Yes'"
           >
             <UTextarea
+              autoresize
+              :rows="2"
               v-model="formState.subjects"
               placeholder="List the subjects here"
             />
@@ -63,7 +66,7 @@
           </UFormGroup>
         </div>
         <div class="flex flex-col gap-4 mt-4">
-          <UTextarea v-model="formattedOutput" />
+          <UTextarea v-model="formattedOutput" rows="10" />
           <UButton class="self-end" @click="handleCopy">Copy</UButton>
         </div>
       </UCard>
