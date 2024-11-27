@@ -1,3 +1,5 @@
 <template>
-    <h1>LOA AP</h1>
+    <div>
+        Leave of Absence AP
+    </div>
 </template>
