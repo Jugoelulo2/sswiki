@@ -1,8 +1,7 @@
 <template>    
   <UButton 
     label="AP Notes"
-    color="neutral"
-    variant="subtle"
+    variant="solid"
     @click="isOpen = true"
   />
   <UModal v-model="isOpen">

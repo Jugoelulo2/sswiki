@@ -2,7 +2,7 @@
 import PocketBase from 'pocketbase'
 
 const usePocketBase = () => {
-    const pb = new PocketBase('https://sswiki.pockethost.io');
+    const pb = new PocketBase(process.env.POCKETBASE_URL);
 
     return pb;
 }

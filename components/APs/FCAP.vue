@@ -1,5 +1,8 @@
 <template>
-  <UButton label="FC Note" color="neutral" variant="subtle" @click="isOpen = true" />
+  <UButton 
+    label="FC Note" 
+    variant="solid" 
+    @click="isOpen = true" />
   <UModal v-model="isOpen">
     <UCard>
       <template #header>
