@@ -1,11 +1,14 @@
 // Using ES modules (default)
-import PocketBase from 'pocketbase'
+import PocketBase from "pocketbase";
 
-const usePocketBase = () => {
-    const pb = new PocketBase(process.env.POCKETBASE_URL);
+export function usePocketBase() {
+  const config = useRuntimeConfig();
+  const pocketbaseUrl = config.public.POCKETBASE_URL as string;
 
-    return pb;
+  if (!pocketbaseUrl) {
+    console.error("POCKETBASE_URL is not defined in the environment variables");
+  }
+
+  const pb = new PocketBase(pocketbaseUrl);
+  return { pb };
 }
-
-export default usePocketBase;
-

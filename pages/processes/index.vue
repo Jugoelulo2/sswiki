@@ -32,12 +32,14 @@
 </template>
 
 <script setup>
-const pb = usePocketBase();
-const processes = await pb.collection("processes").getFullList();
+const { pb } = usePocketBase();
+
+const processes = await pb.collection("processes").getFullList({
+  sort: "-created",
+});
 
 const searchQuery = ref("");
-const selectedType = ref("");
-const apFilter = ref("");
+
 
 const filteredProcesses = computed(() => {
   return processes.filter((process) => {
@@ -45,13 +47,7 @@ const filteredProcesses = computed(() => {
       .toLowerCase()
       .includes(searchQuery.value.toLowerCase());
 
-    const matchesType =
-      !selectedType.value || process.student_type === selectedType.value;
-
-    const matchesAP =
-      !apFilter.value || process.AP_required.toString() === apFilter.value;
-
-    return matchesSearch && matchesType && matchesAP;
+    return matchesSearch;
   });
 });
 

@@ -18,7 +18,7 @@
             <!-- Action Buttons Section -->
             <div class="flex flex-col gap-4">
                 <!-- AP Buttons -->
-                <div v-if="process.AP_required" class="flex justify-end">
+                <div class="flex justify-end">
                     <CoeAP v-if="process.ap_note === 'coe'" class="w-full sm:w-auto"/>
                     <LoaAP v-if="process.ap_note === 'loa'" class="w-full sm:w-auto"/>
                     <CtAP v-if="process.ap_note === 'ct'" class="w-full sm:w-auto"/>
@@ -49,6 +49,6 @@ import AcAP from '~/components/APs/AcAP.vue';
 
 const route = useRoute()
 const slug = route.params.slug
-const pb = usePocketBase()
+const {pb} = usePocketBase()
 const process = await pb.collection('processes').getFirstListItem(`slug = "${slug}"`)
 </script> 

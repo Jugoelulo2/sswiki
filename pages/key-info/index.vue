@@ -11,6 +11,6 @@
 
 
 <script setup>
-const pb = usePocketBase()
-const keyInfoList = await pb.collection('key_info').getFullList()
+const { pb } = usePocketBase();
+const keyInfoList = await pb.collection("key_info").getFullList();
 </script>
