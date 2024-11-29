@@ -4,8 +4,8 @@
     variant="solid"
     @click="isOpen = true"
   />
-  <UModal v-model="isOpen">
-    <UCard>
+  <UModal v-model="isOpen" class="dark:bg-gray-900">
+    <UCard class="dark:bg-gray-900" >
         <template #header>
           <h3 class="text-xl font-semibold">AP Notes</h3>
         </template>

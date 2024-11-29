@@ -3,13 +3,13 @@
     label="FC Note" 
     variant="solid" 
     @click="isOpen = true" />
-  <UModal v-model="isOpen">
-    <UCard>
+  <UModal v-model="isOpen"  class="dark:bg-gray-900">
+    <UCard class="dark:bg-gray-900">
       <template #header>
         <h1 class="text-2xl font-bold">FC Note</h1>
       </template>
-      <div class="space-y-6 flex flex-col">
-        <div class="bg-gray-50 p-8 rounded-lg space-y-6">
+      <div class="space-y-6 flex flex-col dark:bg-gray-900">
+        <div class="bg-gray-50 p-8 rounded-lg space-y-6 dark:bg-gray-800">
 
           <!-- Reason for Application -->
           <UFormGroup label="Reason for Application" required>
