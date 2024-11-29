@@ -1,9 +1,9 @@
 <template>
-  <UContainer class="py-16">
+  <UContainer class="py-16 dark:bg-gray-900">
     <!-- Hero Section -->
-    <div class="text-center space-y-8 mb-16">
+    <div class="text-center space-y-8 mb-16 dark:text-gray-300">
       <h1 class="text-4xl font-bold">SSWiki</h1>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto dark:text-gray-300">
         Your comprehensive resource for student services processes, templates, and key information.
       </p>
     </div>
@@ -17,12 +17,12 @@
             <h2 class="text-xl font-semibold">{{ feature.title }}</h2>
           </div>
         </template>
-        <p class="text-gray-600">{{ feature.description }}</p>
-        <template #footer>
+        <p class="text-gray-600 dark:text-gray-300">{{ feature.description }}</p>
+        <template #footer >
           <UButton
             :to="feature.link"
             color="primary"
-            variant="soft"
+            variant="solid"
             block
           >
             Explore {{ feature.title }}
@@ -32,7 +32,7 @@
     </div>
 
     <!-- Quick Actions -->
-    <div class="text-center">
+    <div class="text-center dark:text-gray-300">
       <h2 class="text-2xl font-semibold mb-6">Quick Actions</h2>
       <div class="flex flex-wrap justify-center gap-4">
         <UButton
@@ -41,6 +41,8 @@
           :to="action.link"
           :icon="action.icon"
           size="lg"
+          color="primary" 
+          variant="solid"
         >
           {{ action.label }}
         </UButton>

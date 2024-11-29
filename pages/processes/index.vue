@@ -1,7 +1,7 @@
 <template>
   <h1 class="text-center text-2xl font-bold">Processes</h1>
 
-  <div class="container mx-auto mt-8 px-4">
+  <div class="container mx-auto mt-8 px-4" >
     <div
       class="mb-6 space-y-4 sm:space-y-0 sm:flex sm:items-center sm:space-x-4"
     >

@@ -21,6 +21,7 @@ const slug = route.params.slug
 const pb = usePocketBase()
 const keyInfo = await pb.collection('key_info').getFirstListItem(`slug = "${slug}"`)
 
+
 // Function to get the full image URL
 const getImageUrl = (fileName) => {
     return `${pb.baseUrl}/api/files/key_info/${keyInfo.id}/${fileName}`
