@@ -7,12 +7,20 @@
         <div class="flex flex-col gap-6 dark:bg-gray-900">
             <!-- Process Info -->
             <div class="bg-gray-50 rounded-lg p-6 dark:bg-gray-800 ">
-                <div class="mb-4 dark:text-gray-300">
-                    <span class="font-semibold">Student Type:</span>
-                    <span class="ml-2 text-gray-500 dark:text-gray-300">{{ process.student_type }}</span>
-                </div>
-                
-                <div v-html="process.content" class="prose dark:prose-invert"></div>
+                <UTabs :items="[
+                    {
+                        label: 'International Students',
+                        content: process.content
+                    },
+                    {
+                        label: 'Domestic Students',
+                        content: process.domestic_process
+                    }
+                ]">
+                    <template #item="{ item }">
+                        <div v-html="item.content" class="prose dark:prose-invert"></div>
+                    </template>
+                </UTabs>
             </div>
 
             <!-- Action Buttons Section -->
