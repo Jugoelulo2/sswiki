@@ -67,7 +67,7 @@ const features = [
   },
   {
     title: 'Key Information',
-    description: 'Essential reference materials and important documentation.',
+    description: 'Essential information for students and staff. Key Dates, Banner Codes, etc.',
     icon: 'i-heroicons-information-circle',
     link: '/key-info'
   }
