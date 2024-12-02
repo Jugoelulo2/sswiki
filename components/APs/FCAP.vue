@@ -103,7 +103,7 @@
         </div>
         <div class="flex gap-4">
           <UTextarea class="flex-grow" v-model="formattedOutput" />
-          <UButton class="self-end" @click="handleCopy">Copy</UButton>
+          <UButton class="self-end" @click="copyToClipboard">Copy</UButton>
         </div>
       </div>
     </UCard>
@@ -160,8 +160,27 @@ ${documents.value.length ? documents.value.join("\n") : "None provided"}
 Recommendation:
 ${recommendation.value}`;
 });
-const { text, copy, copied, isSupported } = useClipboard()
-const handleCopy = () => {
+const { copy } = useClipboard()
+const toast = useToast();
+ 
+function copyToClipboard() {
   copy(formattedOutput.value)
+    .then(() => {
+      toast.add({
+        title: "Copied to clipboard",
+        description: "The note has been copied to your clipboard.",
+        icon: "i-heroicons-clipboard-document-check",
+        color: "green",
+      });
+    })
+    .catch((err) => {
+      console.error("Failed to copy text: ", err);
+      toast.add({
+        title: "Failed to copy",
+        description: "An error occurred while copying to clipboard.",
+        icon: "i-heroicons-exclamation-triangle",
+        color: "red",
+      });
+    });
 }
 </script>

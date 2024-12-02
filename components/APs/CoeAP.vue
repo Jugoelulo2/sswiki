@@ -77,7 +77,7 @@
         </div>
       <div class="flex flex-col gap-4">
         <UTextarea v-model="formattedOutput" rows="10" />
-        <UButton class="self-end" @click="handleCopy">Copy</UButton>
+        <UButton class="self-end" @click="copyToClipboard">Copy</UButton>
         </div>
       </div>
     </UCard>
@@ -134,8 +134,27 @@ New course finish date: ${formatDate(newFinishDate.value)}
 Supporting Documentation:
 ${formatDocs}`;
 });
-const { text, copy, copied, isSupported } = useClipboard();
-const handleCopy = () => {
-  copy(formattedOutput.value);
-};
+const { copy } = useClipboard()
+const toast = useToast();
+ 
+function copyToClipboard() {
+  copy(formattedOutput.value)
+    .then(() => {
+      toast.add({
+        title: "Copied to clipboard",
+        description: "The note has been copied to your clipboard.",
+        icon: "i-heroicons-clipboard-document-check",
+        color: "green",
+      });
+    })
+    .catch((err) => {
+      console.error("Failed to copy text: ", err);
+      toast.add({
+        title: "Failed to copy",
+        description: "An error occurred while copying to clipboard.",
+        icon: "i-heroicons-exclamation-triangle",
+        color: "red",
+      });
+    });
+}
 </script>

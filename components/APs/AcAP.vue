@@ -35,7 +35,7 @@
                         class="flex-grow "
                         v-model="formattedOutput" />
                         <UButton 
-                        class="self-end" variant="solid" @click="handleCopy">Copy</UButton>
+                        class="self-end" variant="solid" @click="copyToClipboard">Copy</UButton>
                     </div>
                 </div>
                     
@@ -56,7 +56,27 @@ const formattedOutput = computed(() => {
     Subjects to be Re-credited: ${subjects.value.join(', ')}`;
 });
 
-const handleCopy = () => {
-    navigator.clipboard.writeText(formattedOutput.value);
-};
+const { copy } = useClipboard()
+const toast = useToast();
+ 
+function copyToClipboard() {
+  copy(formattedOutput.value)
+    .then(() => {
+      toast.add({
+        title: "Copied to clipboard",
+        description: "The note has been copied to your clipboard.",
+        icon: "i-heroicons-clipboard-document-check",
+        color: "green",
+      });
+    })
+    .catch((err) => {
+      console.error("Failed to copy text: ", err);
+      toast.add({
+        title: "Failed to copy",
+        description: "An error occurred while copying to clipboard.",
+        icon: "i-heroicons-exclamation-triangle",
+        color: "red",
+      });
+    });
+}
 </script>
