@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <UContainer>
         <h2 class="text-2xl font-bold mb-4 text-center">Subject Codes</h2>
         <table class="subject-codes-table">
             <thead>
@@ -33,7 +33,7 @@
                 </template>
             </tbody>
         </table>
-    </div>
+    </UContainer>
 </template>
 
 <script>
