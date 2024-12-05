@@ -2,9 +2,12 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxt/ui", "@formkit/auto-animate"],
+
   runtimeConfig: {
     public: {
       POCKETBASE_URL: process.env.POCKETBASE_URL,
     },
   },
+
+  compatibilityDate: "2024-12-05",
 });
