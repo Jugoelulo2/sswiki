@@ -1,8 +1,8 @@
 <template>
     <UContainer>
-        <h1 class="text-center text-2xl font-bold mb-6">Transport Card Process</h1>
+        <h1 class="text-center text-2xl font-bold mb-6 pt-6">Transport Card Process</h1>
         
-        <UTabs :items="tabItems">
+        <UTabs :items="tabItems" class="max-w-3xl mx-auto">
             <template #item="{ item }">
                 <div class="p-4 space-y-4">
                     <!-- Campus Info -->
