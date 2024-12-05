@@ -1,7 +1,7 @@
 <template>
     <UContainer>
-        <h2 class="text-2xl font-bold mb-4 text-center">Campus Codes</h2>
-        <table class="campus-codes-table">
+        <h2 class="text-2xl font-bold mb-4 text-center pt-6">Campus Codes</h2>
+        <table class="campus-codes-table max-w-3xl mx-auto mb-6">
             <thead>
                 <tr>
                     <th>Campus Code</th>
