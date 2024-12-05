@@ -2,7 +2,7 @@
     <UContainer>
         <div class="max-w-4xl mx-auto">
             <!-- Header -->
-            <h1 class="text-center text-3xl font-bold mb-8">Key Information</h1>
+            <h1 class="text-center text-3xl font-bold mb-8 pt-6">Key Information</h1>
 
             <!-- Search Bar -->
             <div class="mb-8">
