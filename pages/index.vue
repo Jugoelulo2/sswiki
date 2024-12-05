@@ -10,7 +10,7 @@
 
     <!-- Features Grid -->
     <div class="grid md:grid-cols-3 gap-8 mb-16">
-      <UCard v-for="feature in features" :key="feature.title">
+      <UCard v-for="feature in features" :key="feature.title" class="dark:bg-gray-800 bg-primary-50">
         <template #header>
           <div class="flex items-center gap-2">
             <UIcon :name="feature.icon" class="text-2xl text-primary" />
@@ -42,7 +42,7 @@
           :icon="action.icon"
           size="lg"
           color="primary" 
-          variant="solid"
+          variant="soft"
         >
           {{ action.label }}
         </UButton>
@@ -60,10 +60,10 @@ const features = [
     link: '/processes'
   },
   {
-    title: 'Templates',
-    description: 'Standardized forms and documents for common student service requests.',
+    title: 'Tools',
+    description: 'Quickly access tools for common tasks and general workflows, like Academic Processes, etc.',
     icon: 'i-heroicons-document-duplicate',
-    link: '/templates'
+    link: '/tools'
   },
   {
     title: 'Key Information',
@@ -80,9 +80,9 @@ const quickActions = [
     link: '/processes'
   },
   {
-    label: 'View Templates',
+    label: 'View Tools',
     icon: 'i-heroicons-document',
-    link: '/templates'
+    link: '/tools'
   },
   {
     label: 'Access Key Info',
