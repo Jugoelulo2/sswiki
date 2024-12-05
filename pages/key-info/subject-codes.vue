@@ -80,19 +80,40 @@ export default {
     text-align: left;
 }
 
+:root.dark .subject-codes-table th,
+:root.dark .subject-codes-table td {
+    border-color: #4a5568;
+}
+
 .subject-codes-table th {
     background-color: #f5f5f5;
     font-weight: bold;
+}
+
+:root.dark .subject-codes-table th {
+    background-color: #2d3748;
 }
 
 .subject-codes-table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
+:root.dark .subject-codes-table tr:nth-child(even) {
+    background-color: #2d3748;
+}
+
+:root.dark .subject-codes-table tr:nth-child(odd) {
+    background-color: #1a202c;
+}
+
 .separator-row {
-    background-color: #e0e0e0 !important;
+    background-color: #c6d8cd !important;
     font-weight: bold;
     text-align: center;
+}
+
+:root.dark .separator-row {
+    background-color: #85f5b0e1 !important;
 }
 
 .separator-row td {
