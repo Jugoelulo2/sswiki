@@ -25,7 +25,7 @@
                     <UButton
                         :to="item.path"
                         class="w-full h-full p-6 text-left flex items-center gap-3"
-                        variant="soft"
+                        variant="outline"
                     >
                         <UIcon
                             :name="item.icon"

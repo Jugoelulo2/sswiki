@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto px-8 py-6" dark:bg-gray-900 v-if="process">
+    <div class="container mx-auto px-8 py-6 max-w-3xl" dark:bg-gray-900 v-if="process">
         <!-- Header Section -->
         <h1 class="text-center text-2xl font-bold mb-6 dark:text-gray-300">{{ process.title }}</h1>
 
@@ -18,7 +18,7 @@
                     }
                 ]">
                     <template #item="{ item }">
-                        <div v-html="item.content" class="prose dark:prose-invert"></div>
+                        <div v-html="item.content" class="prose dark:prose-invert max-w-3/4 mx-auto"></div>
                     </template>
                 </UTabs>
             </div>

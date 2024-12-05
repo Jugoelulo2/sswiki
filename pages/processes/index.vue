@@ -1,9 +1,9 @@
 <template>
-  <h1 class="text-center text-2xl font-bold">Processes</h1>
+  <h1 class="text-2xl font-bold pt-6 my-2 text-center">Processes</h1>
 
-  <div class="container mx-auto mt-8 px-4" >
+  <div class="container mx-auto mt-8 px-4 max-w-3xl" >
     <div
-      class="mb-6 space-y-4 sm:space-y-0 sm:flex sm:items-center sm:space-x-4"
+      class="mb-6 space-y-4 sm:space-y-0 sm:flex sm:items-center sm:space-x-4 dark:text-gray-300"
     >
       <div class="flex-1">
         <UInput
@@ -18,7 +18,7 @@
       <li
         v-for="process in filteredProcesses"
         :key="process.id"
-        class="border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
+        class="border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow bg-stone-50 dark:bg-gray-800"
       >
         <div class="flex justify-between items-center">
           <h2 class="text-lg font-semibold">{{ process.title }}</h2>

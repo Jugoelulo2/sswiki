@@ -1,7 +1,7 @@
 <template>
     <UContainer>
-        <h2 class="text-2xl font-bold mb-4 text-center">Subject Codes</h2>
-        <table class="subject-codes-table">
+        <h2 class="text-2xl font-bold mb-4 text-center pt-6">Subject Codes</h2>
+        <table class="subject-codes-table max-w-3xl mx-auto mb-6">
             <thead>
                 <tr>
                     <th>Code</th>
