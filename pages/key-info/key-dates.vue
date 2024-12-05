@@ -2,7 +2,7 @@
     <div class="text-center key-dates">
         <h1 class="text-2xl font-bold mb-4">Key Dates</h1>
         
-        <div v-for="year in [2024, 2025, 2026, 2027, 2028, 2029]" :key="year" class="year-section">
+        <div v-for="year in [2024, 2025, 2026, 2027, 2028, 2029]" :key="year" class="year-section mx-8 mb-4">
             <h2 class="text-xl font-semibold mb-2">{{ year }} Academic Year</h2>
             <table>
                 <thead>
