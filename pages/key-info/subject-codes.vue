@@ -21,13 +21,13 @@
                         <td>{{ code.startDate }}</td>
                         <td>{{ code.endDate }}</td>
                     </tr>
-                    <tr v-if="code.code === 'RW'" class="separator-row">
+                    <tr v-if="code.code === 'RW'" class="separator-row bg-gray-100 dark:bg-gray-800 text-center">
                         <td colspan="4">Waiting</td>
                     </tr>
-                    <tr v-if="code.code === 'WL'" class="separator-row">
+                    <tr v-if="code.code === 'WL'" class="separator-row bg-gray-100 dark:bg-gray-800 text-center">
                         <td colspan="4">Withdrawn - Not Liable for Fees</td>
                     </tr>
-                    <tr v-if="code.code === 'FT'" class="separator-row">
+                    <tr v-if="code.code === 'FT'" class="separator-row bg-gray-100 dark:bg-gray-800 text-center">
                         <td colspan="4">Withdrawn - Liable for Fees</td>
                     </tr>
                 </template>
@@ -107,13 +107,13 @@ export default {
 }
 
 .separator-row {
-    background-color: #c6d8cd !important;
+    background-color: #fdbb74b6 !important;
     font-weight: bold;
-    text-align: center;
+    text-align: center ;
 }
 
 :root.dark .separator-row {
-    background-color: #85f5b0e1 !important;
+    background-color: #fdbb74b6    !important;
 }
 
 .separator-row td {
