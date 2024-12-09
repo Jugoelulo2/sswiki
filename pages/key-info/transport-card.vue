@@ -46,19 +46,9 @@
                     <div>
                         <label class="block text-sm font-medium mb-1">Website Link</label>
                         <div class="flex items-center space-x-2">
-                            <UTextarea
-                                v-model="item.data.websiteLink"
-                                :rows="1"
-                                readonly
-                                class="mb-4"
-                            />
-                            <a 
-                                :href="`https://${item.data.websiteLink}`" 
-                                target="_blank"
-                                class="text-blue-500 hover:underline"
-                            >
+                            <UButton :to="`https://${item.data.websiteLink}`" variant="link">
                                 Visit Site
-                            </a>
+                            </UButton>
                         </div>
                     </div>
                 </div>
