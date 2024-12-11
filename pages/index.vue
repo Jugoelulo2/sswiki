@@ -4,7 +4,7 @@
     <div class="text-center space-y-8 mb-16 dark:text-gray-300">
       <h1 class="text-4xl font-bold">SSWiki</h1>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto dark:text-gray-300">
-        Your comprehensive resource for student services processes, templates, and key information.
+        Your comprehensive resource for student services processes, tools, and key information.
       </p>
     </div>
 
