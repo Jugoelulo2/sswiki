@@ -44,6 +44,8 @@
 </template>
 
 <script setup>
+
+import {useClipboard} from '@vueuse/core'
 import { ref, computed } from 'vue';
 const isOpen = ref(false);
 const subjects = ref([]);
